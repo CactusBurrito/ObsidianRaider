@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ObsidianRaider_v1.0">
+    <output-path>$PROJECT_DIR$/classes/artifacts/ObsidianRaider_v1_0</output-path>
+    <root id="archive" name="ObsidianRaider_v1.0.jar" />
+  </artifact>
+</component>

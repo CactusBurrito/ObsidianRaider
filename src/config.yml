@@ -1,0 +1,50 @@
+### Explosion radius for all blocks - Default minecraft values used, feel free to use your own.
+### Increase in size may decrease performance, but should be fine as long as used in moderation.
+### Can always disable this feature.
+Radius:
+  Enabled: false
+  TnT: 6.9
+  Creeper: 5.2
+  ChargedCreeper: 10.2
+  EndCrystal: 10.2
+  Wither: 12.1
+  WitherSkull: 1.5
+
+### Explosion radius for damageable blocks only - this will not affect normal explosion radius of tnt for other blocks
+Explosion Radius: 6.9
+
+### Should other exploding entities do damage to obsidian (or your defined damageable blocks from below).
+All Explosions: true
+
+### Does distance from TnT explosion to the block affect the damage the block takes?
+### The further away the block is from the explosion within the damage radius, the less damage the block will
+### will take.  Damage is 1 by default.
+### If true: Damage = 1 / Distance.
+Distance Affects Damage: true
+
+### Modifies the minimum explosion damage possible after distance is applied.
+Minimum Distance Damage: 0.8
+
+### Should check if block being damaged is surrounded by water on East, North, West or South sides? (No diagonal checks)
+Check Block Liquid: true
+
+### If tnt is inside water, (also if block is surrounded by water set to true) multiply damage by selected multiplier.
+Liquid Multiplier: 0.8
+
+### Right click with chosen item to check block health
+CheckItem:
+  Item: 'STICK'
+
+### What message to display when checking block health.
+Message:
+  Block health: '&2Block Health: &c<percent>% hp'
+
+### Set how much health blocks should have. Add as many blocks as you want.
+### Blocks not added here will follow default minecraft rules.
+### Can makes almost indestructible if you set the value to really high!
+### !Not recommended to add very common blocks like dirt etc.
+Damageable Block Health:
+  obsidian: 5.0
+
+### Internal - Do not touch.
+Config Version: 4

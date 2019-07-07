@@ -1,0 +1,5 @@
+name: obsidianraider
+author: [cactusdev]
+main: net.cactusdev.obsidianraider.ObsidianRaiderMain
+version: 1.0
+spigot: 24194
