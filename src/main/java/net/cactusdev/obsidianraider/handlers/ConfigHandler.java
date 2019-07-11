@@ -4,10 +4,8 @@ import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
 import net.cactusdev.obsidianraider.debug.DebugUtils;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.net.URL;
 
 /**
  * Handles correct initialisation or replacement of the config file if the old one is out of date.
@@ -51,9 +49,6 @@ public class ConfigHandler
 			//Test config version against version in the plugin info class.
 			if(main.getConfig().getInt("Config Version") < PluginInfo.CONFIG_VERSION)
 			{
-				//Get predefined config file.
-				URL inputUrl = main.getClass().getResource("/config.yml");
-
 				//Find the folder that must contain the config file.
 				File destination = new File(main.getDataFolder() + File.separator + "config.yml");
 
@@ -72,7 +67,7 @@ public class ConfigHandler
 					DebugUtils.Print("Replaced old config with new, please check files!");
 				}
 
-				FileUtils.copyURLToFile(inputUrl, destination);
+				ObsidianRaiderMain.GetInstance().saveDefaultConfig();
 
 				DebugUtils.Print("Config successfully exported.");
 			}

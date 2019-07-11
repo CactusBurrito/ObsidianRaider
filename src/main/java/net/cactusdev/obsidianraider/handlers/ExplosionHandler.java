@@ -131,7 +131,7 @@ public class ExplosionHandler implements Listener
 									blockList.add(block);
 								}
 
-								return;
+								continue;
 							}
 
 							blockList.remove(block);
@@ -179,7 +179,7 @@ public class ExplosionHandler implements Listener
 	{
 		Material m = block.getType();
 
-		return (double) PluginInfo.GetDamageableBlocks().get(m.toString().toLowerCase());
+		return ((Double)PluginInfo.GetDamageableBlocks().get(m.toString().toLowerCase())).doubleValue();
 	}
 
 	/**
