@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="ObsidianRaider_1.12.0">
+  <artifact type="jar" build-on-make="true" name="ObsidianRaider_Spigot_1.12.0">
     <output-path>$PROJECT_DIR$/../../Test Servers/Spigot_1.12.0_Server/plugins</output-path>
     <root id="archive" name="ObsidianRaider_1.14.3.jar">
       <element id="module-output" name="obsidianraider" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/config.yml" />
     </root>
   </artifact>
 </component>

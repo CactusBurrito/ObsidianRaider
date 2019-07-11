@@ -13,7 +13,7 @@ public class PluginInfo
 
 	public static final String PLUGIN_NAME = "Obsidian-Raider";
 
-	public static final String PLUGIN_VERSION = "1.0";
+	public static final String PLUGIN_VERSION = "1.1";
 
 	public static final int CONFIG_VERSION = 4;
 

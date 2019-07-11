@@ -1,3 +1,7 @@
+/**
+ * Copyright 2019, for https://github.com/CactusBurrito user, All rights reserved.
+ */
+
 package net.cactusdev.obsidianraider;
 
 import org.bukkit.block.Block;
