@@ -1,5 +1,6 @@
 # ObsidianRaider
 Obsidian Raider - Spigot/PaperMC Support
+Spigot Page: https://www.spigotmc.org/resources/obsidian-raider.69098/
 
 Developed against: 1.14.3  
 Tested against: 1.12, 1.13, 1.14
