@@ -1,5 +1,8 @@
 # ObsidianRaider
-Obsidian Raider - Spigot/PaperMC Support 
+Obsidian Raider - Spigot/PaperMC Support
+
+Developed against: 1.14.3
+Tested against: 1.12, 1.13, 1.14
 
 # Installation
 - Drag into plugins folder
@@ -7,3 +10,5 @@ Obsidian Raider - Spigot/PaperMC Support
 - Installation complete
 
 Any changes to the config will require a restart. Plans for the next version will include a command for quick reload.
+
+Support / Discord: https://discord.gg/fWRNngC
