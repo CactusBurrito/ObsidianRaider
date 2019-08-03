@@ -1,8 +1,9 @@
-package net.cactusdev.obsidianraider.handlers;
+package net.cactusdev.obsidianraider.config;
 
 import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
 import net.cactusdev.obsidianraider.debug.DebugUtils;
+import net.cactusdev.obsidianraider.interfaces.IDisposable;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
@@ -13,7 +14,7 @@ import java.io.File;
  * change the config version inside the config file.
  * @author CactusBurrito
  */
-public class ConfigHandler
+public class PluginConfig implements IDisposable
 {
 
 	/**
@@ -22,9 +23,9 @@ public class ConfigHandler
 	private static FileConfiguration _Config;
 
 	/**
-	 * Create an instance of {@link ConfigHandler}.
+	 * Create an instance of {@link PluginConfig}.
 	 */
-	public ConfigHandler()
+	public PluginConfig()
 	{
 		CheckForOldConfig();
 	}
@@ -37,11 +38,13 @@ public class ConfigHandler
 	{
 		ObsidianRaiderMain main = ObsidianRaiderMain.GetInstance();
 
+		main.reloadConfig();
+
 		//Create a directory for the plugin, if one doesnt exist.
 		main.getDataFolder().mkdir();
 
 		_Config = main.getConfig();
-		_Config.options().copyDefaults(true);
+		//_Config.options().copyDefaults(true);
 		_Config.addDefault("Config Version", 0);
 
 		try
@@ -83,5 +86,10 @@ public class ConfigHandler
 	public static FileConfiguration GetConfig()
 	{
 		return _Config;
+	}
+
+	public void Dispose()
+	{
+		_Config = null;
 	}
 }

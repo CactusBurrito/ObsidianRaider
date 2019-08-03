@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="ObsidianRaider_v1.1">
-    <output-path>$PROJECT_DIR$/classes/artifacts/ObsidianRaider_v1_1</output-path>
-    <root id="archive" name="ObsidianRaider_v1.1.jar">
+  <artifact type="jar" build-on-make="true" name="ObsidianRaider_v1.2">
+    <output-path>$PROJECT_DIR$/classes/artifacts/ObsidianRaider_v1_2</output-path>
+    <root id="archive" name="ObsidianRaider_v1.2.jar">
       <element id="module-output" name="obsidianraider" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/java/plugin.yml" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/java/config.yml" />

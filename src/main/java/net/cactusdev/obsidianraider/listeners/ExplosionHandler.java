@@ -1,8 +1,9 @@
-package net.cactusdev.obsidianraider.handlers;
+package net.cactusdev.obsidianraider.listeners;
 
 import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
 import net.cactusdev.obsidianraider.Utils;
+import net.cactusdev.obsidianraider.interfaces.IDisposable;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -32,13 +33,13 @@ import static org.bukkit.Bukkit.getServer;
  * Handle Explosions events and apply damageable blocks logic. Also handles health checking.
  * @author CactusBurrito
  */
-public class ExplosionHandler implements Listener
+public class ExplosionHandler implements Listener, IDisposable
 {
 	/**
 	 * HashMap containing the blocks that are damageable that have been placed in the world. !This is reset every restart
 	 * , currently no way to save data over to new game session. If this is wanted, let me know and i can work on it.
 	 */
-	private static HashMap<String, Double> _BlockHealth = new HashMap<String, Double>();
+	private static HashMap<String, Double> _BlockHealth;
 
 	/**
 	 * Create a new instance of {@link ExplosionHandler}.
@@ -46,6 +47,8 @@ public class ExplosionHandler implements Listener
 	public ExplosionHandler()
 	{
 		getServer().getPluginManager().registerEvents(this, ObsidianRaiderMain.GetInstance());
+
+		_BlockHealth = new HashMap<String, Double>();
 	}
 
 	/**
@@ -236,7 +239,7 @@ public class ExplosionHandler implements Listener
 	{
 		if(!event.isCancelled())
 		{
-			if(!PluginInfo.IsExplosionRadiusModifierEnabled())
+			if(PluginInfo.IsExplosionRadiusModifierEnabled())
 			{
 				if(event.getEntityType().equals(EntityType.PRIMED_TNT))
 				{
@@ -303,5 +306,11 @@ public class ExplosionHandler implements Listener
 	public void Dispose()
 	{
 		HandlerList.unregisterAll();
+
+		if(_BlockHealth != null)
+		{
+			_BlockHealth.clear();
+		}
+		_BlockHealth = null;
 	}
 }
