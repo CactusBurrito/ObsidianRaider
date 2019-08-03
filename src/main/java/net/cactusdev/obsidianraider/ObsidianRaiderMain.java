@@ -83,15 +83,6 @@ public class ObsidianRaiderMain extends JavaPlugin implements IDisposable
 	}
 
 	/**
-	 *{@inheritDoc}
-	 */
-	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
-	{
-		return _CommandHandler != null ? _CommandHandler.OnCommand(sender, command, label, args) : super.onCommand(sender, command, label, args);
-	}
-
-	/**
 	 * Get instance of this class.
 	 * @return Instance of {@link ObsidianRaiderMain}.
 	 */
@@ -128,7 +119,7 @@ public class ObsidianRaiderMain extends JavaPlugin implements IDisposable
 			_ExplosionHandler.Dispose();
 			_ExplosionHandler = null;
 		}
-		
+
 		if(_PluginInfo != null)
 		{
 			_PluginInfo.Dispose();

@@ -16,7 +16,7 @@ public class PluginInfo implements IDisposable
 
 	public static final String PLUGIN_VERSION = ObsidianRaiderMain.GetInstance().getDescription().getVersion();
 
-	public static final int CONFIG_VERSION = 4;
+	public static final int CONFIG_VERSION = 4; //Only change once released to the public with any changes to the config file.
 
 	public static final String[] SUPPORTED_BUKKIT_VERSIONS = {"1.12","1.13","1.14"};
 

@@ -38,11 +38,13 @@ public class PluginConfig implements IDisposable
 	{
 		ObsidianRaiderMain main = ObsidianRaiderMain.GetInstance();
 
+		main.reloadConfig();
+
 		//Create a directory for the plugin, if one doesnt exist.
 		main.getDataFolder().mkdir();
 
 		_Config = main.getConfig();
-		_Config.options().copyDefaults(true);
+		//_Config.options().copyDefaults(true);
 		_Config.addDefault("Config Version", 0);
 
 		try
