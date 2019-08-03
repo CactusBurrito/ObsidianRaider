@@ -1,7 +1,7 @@
 package net.cactusdev.obsidianraider;
 
 import net.cactusdev.obsidianraider.debug.DebugUtils;
-import net.cactusdev.obsidianraider.handlers.ConfigHandler;
+import net.cactusdev.obsidianraider.config.PluginConfig;
 import net.cactusdev.obsidianraider.listeners.ExplosionHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,9 +28,9 @@ public class ObsidianRaiderMain extends JavaPlugin
 	private static ExplosionHandler _ExplosionHandler;
 
 	/**
-	 * Reference to instance of {@link ConfigHandler}.
+	 * Reference to instance of {@link PluginConfig}.
 	 */
-	private static ConfigHandler _ConfigHandler;
+	private static PluginConfig _ConfigHandler;
 
 	/**
 	 * {@inheritDoc}
@@ -42,8 +42,8 @@ public class ObsidianRaiderMain extends JavaPlugin
 
 		_Instance = this;
 
-		_ConfigHandler = new ConfigHandler();
-		_PluginInfo = new PluginInfo(ConfigHandler.GetConfig());
+		_ConfigHandler = new PluginConfig();
+		_PluginInfo = new PluginInfo(PluginConfig.GetConfig());
 		_ExplosionHandler = new ExplosionHandler();
 
 		DebugUtils.Print("Enabled successfully.");
@@ -87,9 +87,9 @@ public class ObsidianRaiderMain extends JavaPlugin
 
 	/**
 	 * Get instance of the config handler.
-	 * @return Instance of {@link ConfigHandler}.
+	 * @return Instance of {@link PluginConfig}.
 	 */
-	public ConfigHandler GetConfigHandler()
+	public PluginConfig GetConfigHandler()
 	{
 		return _ConfigHandler;
 	}

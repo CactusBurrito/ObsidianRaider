@@ -1,4 +1,4 @@
-package net.cactusdev.obsidianraider.handlers;
+package net.cactusdev.obsidianraider.config;
 
 import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
@@ -13,7 +13,7 @@ import java.io.File;
  * change the config version inside the config file.
  * @author CactusBurrito
  */
-public class ConfigHandler
+public class PluginConfig
 {
 
 	/**
@@ -22,9 +22,9 @@ public class ConfigHandler
 	private static FileConfiguration _Config;
 
 	/**
-	 * Create an instance of {@link ConfigHandler}.
+	 * Create an instance of {@link PluginConfig}.
 	 */
-	public ConfigHandler()
+	public PluginConfig()
 	{
 		CheckForOldConfig();
 	}
