@@ -1,5 +1,6 @@
 package net.cactusdev.obsidianraider;
 
+import net.cactusdev.obsidianraider.interfaces.IDisposable;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.Map;
@@ -8,7 +9,7 @@ import java.util.Map;
  * All the info taken from the config and stored within this class rather than constantly searching string in the config.
  * @author CactusBurrito
  */
-public class PluginInfo
+public class PluginInfo implements IDisposable
 {
 
 	public static final String PLUGIN_NAME = "Obsidian-Raider";
@@ -139,5 +140,17 @@ public class PluginInfo
 	public static float GetExplosionRadiusWitherSkull()
 	{
 		return _ExplosionRadiusWitherSkull;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void Dispose()
+	{
+		if(_DamageableBlocks != null)
+		{
+			_DamageableBlocks.clear();
+			_DamageableBlocks = null;
+		}
 	}
 }

@@ -5,8 +5,13 @@ version: 1.0
 spigot: 24194
 
 commands:
-  reload:
+  obsidianr reload:
     description: Fully reload the plugin.
     usage: Use /obsidianraider reload
     permission: <plugin name>.reload
     permission-message: You don't have <permission> to use this command.
+
+permissions:
+  obsidianraider.reload:
+    description: Reload the plugin access.
+    default: op

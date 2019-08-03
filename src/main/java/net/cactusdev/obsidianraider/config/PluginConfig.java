@@ -3,6 +3,7 @@ package net.cactusdev.obsidianraider.config;
 import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
 import net.cactusdev.obsidianraider.debug.DebugUtils;
+import net.cactusdev.obsidianraider.interfaces.IDisposable;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
@@ -13,7 +14,7 @@ import java.io.File;
  * change the config version inside the config file.
  * @author CactusBurrito
  */
-public class PluginConfig
+public class PluginConfig implements IDisposable
 {
 
 	/**
@@ -83,5 +84,10 @@ public class PluginConfig
 	public static FileConfiguration GetConfig()
 	{
 		return _Config;
+	}
+
+	public void Dispose()
+	{
+		_Config = null;
 	}
 }

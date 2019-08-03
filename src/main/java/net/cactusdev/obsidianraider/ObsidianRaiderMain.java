@@ -2,14 +2,18 @@ package net.cactusdev.obsidianraider;
 
 import net.cactusdev.obsidianraider.debug.DebugUtils;
 import net.cactusdev.obsidianraider.config.PluginConfig;
+import net.cactusdev.obsidianraider.interfaces.IDisposable;
+import net.cactusdev.obsidianraider.listeners.CommandHandler;
 import net.cactusdev.obsidianraider.listeners.ExplosionHandler;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * Main class of the game. Handles plugin initialisation.
  * @author CactusBurrito
  */
-public class ObsidianRaiderMain extends JavaPlugin
+public class ObsidianRaiderMain extends JavaPlugin implements IDisposable
 {
 	/**
 	 * Instance of the {@link ObsidianRaiderMain} class held in this static variable for access through out the plugin
@@ -33,6 +37,11 @@ public class ObsidianRaiderMain extends JavaPlugin
 	private static PluginConfig _ConfigHandler;
 
 	/**
+	 * Reference to instance of {@link CommandHandler}.
+	 */
+	private static CommandHandler _CommandHandler;
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -46,6 +55,8 @@ public class ObsidianRaiderMain extends JavaPlugin
 		_PluginInfo = new PluginInfo(PluginConfig.GetConfig());
 		_ExplosionHandler = new ExplosionHandler();
 
+		_CommandHandler = new CommandHandler();
+
 		DebugUtils.Print("Enabled successfully.");
 	}
 
@@ -57,14 +68,27 @@ public class ObsidianRaiderMain extends JavaPlugin
 	{
 		super.onDisable();
 
-		_ExplosionHandler.Dispose();
-
-		_Instance = null;
-		_PluginInfo = null;
-		_ExplosionHandler = null;
-		_ConfigHandler = null;
+		Dispose();
 
 		DebugUtils.Print("Disabled successfully.");
+	}
+
+	/**
+	 * When reload is requested by the plugin itself.
+	 */
+	public void OnReload()
+	{
+		Dispose();
+		onEnable();
+	}
+
+	/**
+	 *{@inheritDoc}
+	 */
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+	{
+		return _CommandHandler != null ? _CommandHandler.OnCommand(sender, command, label, args) : super.onCommand(sender, command, label, args);
 	}
 
 	/**
@@ -92,5 +116,25 @@ public class ObsidianRaiderMain extends JavaPlugin
 	public PluginConfig GetConfigHandler()
 	{
 		return _ConfigHandler;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void Dispose()
+	{
+		if(_ExplosionHandler != null)
+		{
+			_ExplosionHandler.Dispose();
+			_ExplosionHandler = null;
+		}
+
+		_CommandHandler = null;
+		_PluginInfo = null;
+		_ConfigHandler = null;
+
+		_Instance = null;
+
+		DebugUtils.Print("Removing old references");
 	}
 }

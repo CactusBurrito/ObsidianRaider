@@ -3,6 +3,7 @@ package net.cactusdev.obsidianraider.listeners;
 import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
 import net.cactusdev.obsidianraider.Utils;
+import net.cactusdev.obsidianraider.interfaces.IDisposable;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -32,7 +33,7 @@ import static org.bukkit.Bukkit.getServer;
  * Handle Explosions events and apply damageable blocks logic. Also handles health checking.
  * @author CactusBurrito
  */
-public class ExplosionHandler implements Listener
+public class ExplosionHandler implements Listener, IDisposable
 {
 	/**
 	 * HashMap containing the blocks that are damageable that have been placed in the world. !This is reset every restart
@@ -303,5 +304,11 @@ public class ExplosionHandler implements Listener
 	public void Dispose()
 	{
 		HandlerList.unregisterAll();
+
+		if(_BlockHealth != null)
+		{
+			_BlockHealth.clear();
+		}
+		_BlockHealth = null;
 	}
 }
