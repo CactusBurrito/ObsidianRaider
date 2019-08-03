@@ -128,11 +128,20 @@ public class ObsidianRaiderMain extends JavaPlugin implements IDisposable
 			_ExplosionHandler.Dispose();
 			_ExplosionHandler = null;
 		}
+		
+		if(_PluginInfo != null)
+		{
+			_PluginInfo.Dispose();
+			_PluginInfo = null;
+		}
+
+		if(_ConfigHandler != null)
+		{
+			_ConfigHandler.Dispose();
+			_ConfigHandler = null;
+		}
 
 		_CommandHandler = null;
-		_PluginInfo = null;
-		_ConfigHandler = null;
-
 		_Instance = null;
 
 		DebugUtils.Print("Removing old references");
