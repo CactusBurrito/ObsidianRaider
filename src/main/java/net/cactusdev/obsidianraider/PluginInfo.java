@@ -14,7 +14,7 @@ public class PluginInfo implements IDisposable
 
 	public static final String PLUGIN_NAME = "Obsidian-Raider";
 
-	public static final String PLUGIN_VERSION = "1.1";
+	public static final String PLUGIN_VERSION = ObsidianRaiderMain.GetInstance().getDescription().getVersion();
 
 	public static final int CONFIG_VERSION = 4;
 

@@ -1,8 +1,10 @@
 name: obsidianraider
 author: [klaudijus]
 main: net.cactusdev.obsidianraider.ObsidianRaiderMain
-version: 1.0
+version: 1.2
 spigot: 24194
+load: POSTWORLD
+api-version: 1.14
 
 commands:
   obsidianr reload:
