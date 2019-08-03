@@ -2,7 +2,7 @@ package net.cactusdev.obsidianraider;
 
 import net.cactusdev.obsidianraider.debug.DebugUtils;
 import net.cactusdev.obsidianraider.handlers.ConfigHandler;
-import net.cactusdev.obsidianraider.handlers.ExplosionHandler;
+import net.cactusdev.obsidianraider.listeners.ExplosionHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**

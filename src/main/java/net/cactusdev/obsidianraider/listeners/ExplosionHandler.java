@@ -1,4 +1,4 @@
-package net.cactusdev.obsidianraider.handlers;
+package net.cactusdev.obsidianraider.listeners;
 
 import net.cactusdev.obsidianraider.ObsidianRaiderMain;
 import net.cactusdev.obsidianraider.PluginInfo;
