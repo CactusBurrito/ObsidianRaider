@@ -17,5 +17,3 @@ Permission - Reload: obisidianraider.reload - Allows user to reload plugin - OP 
 Command - Reload: /or reload  or  /obsidianr reload
 
 Any changes to the config will require a restart. Plans for the next version will include a command for quick reload.
-
-Support / Discord: https://discord.gg/fWRNngC
